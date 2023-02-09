@@ -3,7 +3,8 @@ pipeline {
 	docker { 
 		image 'alpine:latest'
 		}
-    stages{
+		}
+    stages {
     	stage('data') {
 			script{
 				sh 'touch "test_$(date +"%F %T")"'
