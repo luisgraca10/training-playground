@@ -2,16 +2,16 @@ pipeline {
     agent none
     stages {
         stage('Maven Build') {
-            agent { docker 'maven:3.8.7-eclipse-temurin-11' } 
+            agent { docker image 'maven:3.8.7-eclipse-temurin-11' } 
             steps {
                 echo 'Hello, Maven'
                 sh 'mvn --version'
             }
         }
         stage('npm Build') {
-            agent { docker 'npm:latest' } 
+            agent { docker image 'npm:latest' } 
             steps {
-                echo 'Hello, ngm'
+                echo 'Hello, npm'
                 sh 'npm --version'
             }
         }
