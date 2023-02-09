@@ -1,8 +1,16 @@
 pipeline {
     agent { 
-		docker { 
-			image 'alpine:latest'
-			docker build . --build-arg FOLDER=$(date -u +"%Y%m%d")
+	docker { 
+		image 'alpine:latest'
+		}
+    stages{
+    	stage('data') {
+			script{
+				sh 'touch "test_$(date +"%F %T")"'
+				sh 'sleep 10s'
+			}
+			}
+			
 		}
 	}
     stages {
