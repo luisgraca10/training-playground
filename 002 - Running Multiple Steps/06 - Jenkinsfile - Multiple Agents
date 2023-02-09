@@ -1,6 +1,5 @@
 pipeline {
     agent none
-    tools {nodejs "node"}
     stages {
         stage('Maven Build') {
             agent { docker 'maven:3.8.7-eclipse-temurin-11' } 
@@ -9,7 +8,7 @@ pipeline {
                 sh 'mvn --version'
             }
         }
-        stage('NGM Build') {
+        stage('npm Build') {
             agent { npm 'npm:latest' } 
             steps {
                 echo 'Hello, ngm'
