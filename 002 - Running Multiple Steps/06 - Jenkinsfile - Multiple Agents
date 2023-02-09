@@ -4,6 +4,9 @@ pipeline {
 			image 'alpine:latest' 
 		}
 	}
+    tools {
+        maven 'apache-maven-3.0.1' 
+    }	
     stages {
         stage('Maven Version') {
             steps {
