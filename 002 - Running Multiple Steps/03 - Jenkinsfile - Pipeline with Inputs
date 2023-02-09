@@ -13,6 +13,8 @@ pipeline {
 		    string(name: 'AGE', defaultValue: '69', description: 'How old are you?')
                 }
             }
+	   }
+	  } 
         stage('build') {
             steps {
                 echo "$NAME"
