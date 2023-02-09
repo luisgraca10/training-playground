@@ -1,19 +1,19 @@
 pipeline {
     agent none
-    tools {
-        maven 'apache-maven-3.0.1' 
-    }
     stages {
-        stage('Maven Version') {
-		steps{
-			sh 'mvn --version'
-		}
-                
+        stage('Maven Build') {
+            agent { docker 'maven:3.8.7-eclipse-temurin-11' } 
+            steps {
+                echo 'Hello, Maven'
+                sh 'mvn --version'
+            }
         }
-	stage('NPM Version') {
-                steps{
-			sh 'npm --version'
-		}
+        stage('NGM Build') {
+            agent { npm 'npm:latest' } 
+            steps {
+                echo 'Hello, ngm'
+                sh 'npm --version'
+            }
         }
     }
 }
