@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'cat /etc/alpine-release'
+                sh 'date +"%T"'
                 sh 'sleep 5s'
             }
         }
