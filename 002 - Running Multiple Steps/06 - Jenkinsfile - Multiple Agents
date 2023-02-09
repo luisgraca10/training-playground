@@ -9,7 +9,7 @@ pipeline {
             }
         }
         stage('npm Build') {
-            agent { npm 'npm:latest' } 
+            agent { docker 'npm:latest' } 
             steps {
                 echo 'Hello, ngm'
                 sh 'npm --version'
