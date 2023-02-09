@@ -6,9 +6,11 @@ pipeline {
 	}
     stages {
     	stage('build'){
-		def saveAndPrintDate(filename = '') {
-   		sh "date > $filename && cat $filename"
-		}
+		sh 'date > currDate.txt'
+	}
+	stage('test){
+		sh 'grep -i "*2019*" currDate.txt'
+	}
 	}
     }
 }
