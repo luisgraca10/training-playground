@@ -5,20 +5,18 @@ pipeline {
 		}
 	}
     stages {
-    	stage('query') {
+    	stage('build') {
             input {
                 message "Como te chamas?"
                 parameters {
                     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 		    string(name: 'AGE', defaultValue: '69', description: 'How old are you?')
                 }
-            }
-	   }
 	  } 
-        stage('build') {
-            steps {
-                echo "$NAME"
-                echo "$AGE"
-            }
-        }
+          steps {
+                sh 'echo "$NAME"'
+                sh 'echo "$AGE"'
+          }
+}
+}
 }
