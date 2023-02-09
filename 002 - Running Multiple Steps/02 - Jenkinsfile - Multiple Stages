@@ -5,5 +5,10 @@ pipeline {
 		}
 	}
     stages {
+    	stage('build'){
+		def saveAndPrintDate(filename = '') {
+   		sh "date > $filename && cat $filename"
+		}
+	}
     }
 }
