@@ -1,9 +1,20 @@
 pipeline {
+    parameters{
+    	choice"NAME, defaultValue: "A tua prima", description: 'Qual o stage pá?')
+    }
     agent { 
 		docker { 
 			image 'alpine:latest' 
 		}
 	}
     stages {
+    	stage('build')
+	 steps {
+	  sh 'echo build'	
+	 }
+	 stage('teste') {
+	 	steps {
+	 	sh 'echo teste'
+	}
     }
 }
