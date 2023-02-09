@@ -4,12 +4,16 @@ pipeline {
 			image 'alpine:latest' 
 		}
 	}
-    stage {
-    	steps ('build'){
+    stages {
+    	stage ('build'){
+		steps{
 		sh 'date > currDate.txt'
+		}
 	}
 	steps ('test'){
+		steps {
 		sh 'grep -i "*2023*" currDate.txt'
+		}
 	}
     }
 }
