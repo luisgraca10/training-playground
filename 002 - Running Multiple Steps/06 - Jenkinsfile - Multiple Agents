@@ -8,7 +8,10 @@ pipeline {
         stage('Maven Version') {
             steps {
 	    	step{
-			def pomv = "$POM_VERSION"
+			script{
+				def pomv = "$POM_VERSION"
+			}
+			
 		}
 	    	
                 sh 'mvn --version'
