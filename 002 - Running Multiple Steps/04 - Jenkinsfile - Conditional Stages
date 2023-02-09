@@ -1,6 +1,6 @@
 pipeline {
     parameters{
-    	choice(NAME, choices: ['build', 'teste'], description: 'Qual o stage pá?')
+    	choice(name: 'choice', choices: ['build', 'teste'], description: 'Qual o stage pá?')
     }
     agent { 
 		docker { 
