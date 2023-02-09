@@ -9,11 +9,17 @@ pipeline {
 	}
     stages {
     	stage('build') {
+	when {
+		environment name:'stage_choice', value: 'build'
+	}
 	 steps {
 	  sh 'echo build'	
 	 }
 	 }
 	 stage('teste') {
+	 		when {
+		environment name:'stage_choice', value: 'teste'
+		}
 	 	steps {
 	 	sh 'echo teste'
 	}
