@@ -8,8 +8,10 @@ pipeline {
     	stage('data') {
 		steps {
 			script{
+				for(int i = 0;i<2;i++){
 				sh 'touch "test_$(date +"%F %T")"'
 				sh 'sleep 10s'
+				}
 			}
 		}	
 	}
