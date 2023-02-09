@@ -2,10 +2,15 @@ pipeline {
     agent none
     stages {
         stage('Maven Version') {
-                sh 'mvn --version'
+		steps{
+			sh 'mvn --version'
+		}
+                
         }
 	stage('NPM Version') {
-                sh 'npm --version'
+                steps{
+			sh 'npm --version'
+		}
         }
     }
 }
