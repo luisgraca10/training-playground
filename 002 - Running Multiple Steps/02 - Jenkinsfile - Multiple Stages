@@ -5,14 +5,14 @@ pipeline {
 		}
 	}
     stages {
-    	stage ('build'){
+    	stage('build'){
 		steps{
-		sh 'date > currDate.txt'
+			sh 'date > currDate.txt'
 		}
 	}
-	steps ('test'){
+	stage('test'){
 		steps {
-		sh 'grep -i "*2023*" currDate.txt'
+			sh 'grep -i "*2023*" currDate.txt'
 		}
 	}
     }
