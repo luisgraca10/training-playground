@@ -9,7 +9,7 @@ pipeline {
 		sh 'date > currDate.txt'
 	}
 	stage ('test'){
-		sh 'grep -i "*2019*" currDate.txt'
+		sh 'grep -i "*2023*" currDate.txt'
 	}
     }
 }
