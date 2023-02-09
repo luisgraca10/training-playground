@@ -8,11 +8,12 @@ pipeline {
 		}
 	}
     stages {
-    	stage('"$(params.CHOICE)"')
+    	stage('build') {
 	 steps {
 	  sh 'echo build'	
 	 }
-	 stage('"$(params.CHOICE)"') {
+	 }
+	 stage('teste') {
 	 	steps {
 	 	sh 'echo teste'
 	}
