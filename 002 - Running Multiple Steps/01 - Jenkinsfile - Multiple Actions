@@ -10,10 +10,7 @@ pipeline {
 				sh 'touch "test_$(date +"%F %T")"'
 				sh 'sleep 10s'
 			}
-			}
-			
-		}
 	}
-    stages {
+			
     }
 }
