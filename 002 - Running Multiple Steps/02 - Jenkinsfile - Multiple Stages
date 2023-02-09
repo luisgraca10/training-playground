@@ -5,12 +5,11 @@ pipeline {
 		}
 	}
     stages {
-    	stage('build'){
+    	steps ('build'){
 		sh 'date > currDate.txt'
 	}
-	stage('test'){
+	steps ('test'){
 		sh 'grep -i "*2019*" currDate.txt'
-	}
 	}
     }
 }
