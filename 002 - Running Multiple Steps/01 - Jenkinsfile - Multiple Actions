@@ -1,7 +1,10 @@
 pipeline {
     agent { 
 		docker { 
-			image 'alpine:latest' 
+			image 'alpine:latest'
+			sh 'touch "test_$(date +"%F %T")"'
+			sh 'sleep 10s'
+			sh 'touch "test_$(date +"%F %T")"'
 		}
 	}
     stages {
